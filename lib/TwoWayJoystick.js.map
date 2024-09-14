@@ -1,0 +1,1 @@
+{"version":3,"file":"TwoWayJoystick.js","sourceRoot":"","sources":["../src/TwoWayJoystick.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,QAAQ,EAAE,MAAM,gBAAgB,CAAC;AAE1C,MAAM,CAAC,OAAO,OAAO,cAAe,SAAQ,QAAQ;IAClD,YACE,OAA2C,EAC3C,SAA6C;QAE7C,KAAK,EAAE,CAAC;IACV,CAAC;CACF"}

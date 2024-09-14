@@ -1,0 +1,1 @@
+{"version":3,"file":"HorizontalJoystick.d.ts","sourceRoot":"","sources":["../src/HorizontalJoystick.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,QAAQ,EAAE,MAAM,gBAAgB,CAAC;AAE1C,MAAM,CAAC,OAAO,OAAO,kBAAmB,SAAQ,QAAQ;gBAEpD,SAAS,EAAE,CAAC,SAAS,EAAE,IAAI,GAAG,MAAM,KAAK,IAAI,EAC7C,UAAU,EAAE,CAAC,SAAS,EAAE,IAAI,GAAG,MAAM,KAAK,IAAI;CAIjD"}

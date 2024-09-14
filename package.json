@@ -1,0 +1,13 @@
+{
+  "name": "@gaiaengine/2d-joystick",
+  "author": "Gaia Protocol",
+  "homepage": "https://gaiaprotocol.com",
+  "version": "0.0.1",
+  "type": "module",
+  "types": "./lib/index.d.ts",
+  "main": "./lib/index.js",
+  "dependencies": {
+    "@gaiaengine/2d": "^0.0.5"
+  },
+  "devDependencies": {}
+}

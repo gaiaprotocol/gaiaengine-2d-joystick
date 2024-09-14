@@ -1,0 +1,1 @@
+{"version":3,"file":"AnalogJoystick.js","sourceRoot":"","sources":["../src/AnalogJoystick.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,QAAQ,EAAE,MAAM,gBAAgB,CAAC;AAE1C,MAAM,CAAC,OAAO,OAAO,cAAe,SAAQ,QAAQ;IAClD,YACE,MAA+B,EAC/B,SAAqB;QAErB,KAAK,EAAE,CAAC;IACV,CAAC;CACF"}

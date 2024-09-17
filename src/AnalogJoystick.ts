@@ -1,6 +1,6 @@
-import { GameNode } from "@gaiaengine/2d";
+import { WindowEventNode } from "@gaiaengine/2d";
 
-export default class AnalogJoystick extends GameNode {
+export default class AnalogJoystick extends WindowEventNode {
   private keysPressed: Set<string> = new Set();
 
   constructor(
@@ -8,35 +8,30 @@ export default class AnalogJoystick extends GameNode {
     private onRelease: () => void,
   ) {
     super();
-    window.addEventListener("keydown", this.keyDownHandler);
-    window.addEventListener("keyup", this.keyUpHandler);
-  }
-
-  private keyDownHandler = (event: KeyboardEvent) => {
-    const key = event.key;
-    if (
-      key === "ArrowUp" || key === "ArrowDown" || key === "ArrowLeft" ||
-      key === "ArrowRight"
-    ) {
-      this.keysPressed.add(key);
-      this.calculateAngle();
-    }
-  };
-
-  private keyUpHandler = (event: KeyboardEvent) => {
-    const key = event.key;
-    if (
-      key === "ArrowUp" || key === "ArrowDown" || key === "ArrowLeft" ||
-      key === "ArrowRight"
-    ) {
-      this.keysPressed.delete(key);
-      if (this.keysPressed.size === 0) {
-        this.onRelease();
-      } else {
+    this.onWindow("keydown", (event: KeyboardEvent) => {
+      const key = event.key;
+      if (
+        key === "ArrowUp" || key === "ArrowDown" || key === "ArrowLeft" ||
+        key === "ArrowRight"
+      ) {
+        this.keysPressed.add(key);
         this.calculateAngle();
       }
-    }
-  };
+    }).onWindow("keyup", (event: KeyboardEvent) => {
+      const key = event.key;
+      if (
+        key === "ArrowUp" || key === "ArrowDown" || key === "ArrowLeft" ||
+        key === "ArrowRight"
+      ) {
+        this.keysPressed.delete(key);
+        if (this.keysPressed.size === 0) {
+          this.onRelease();
+        } else {
+          this.calculateAngle();
+        }
+      }
+    });
+  }
 
   private calculateAngle() {
     let dx = 0;
@@ -51,11 +46,5 @@ export default class AnalogJoystick extends GameNode {
       const angle = Math.atan2(dy, dx);
       this.onMove(angle);
     }
-  }
-
-  public remove(): void {
-    window.removeEventListener("keydown", this.keyDownHandler);
-    window.removeEventListener("keyup", this.keyUpHandler);
-    super.remove();
   }
 }
